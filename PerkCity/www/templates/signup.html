@@ -1,0 +1,33 @@
+<ion-view title="Signup" id="page14">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" >
+        <form name="signUp" novalidate>
+            <ion-list>
+              
+                <label class="item item-input item-floating-label">
+                    <input type="email" name="email"  placeholder="you@yourcompanyemail.com"
+                    ng-model="email" ng-pattern="/^[A-Za-z0-9._%+-]+@perk-city.com$/"/ ng-minlength="6" required>
+                  
+                </label>
+                    
+                <label class="item item-input item-floating-label">
+                    <input type="password" name="password" placeholder="Set your password"
+                    ng-model="password" ng-minlength="6" ng-maxlength="20" required>
+                </label>
+            </ion-list>
+            
+            <div class="signup1">
+            
+                <p ng-show="signUp.email.$error.required">Email is required</p>
+                 <p ng-show="signUp.email.$invalid && !signUp.email.$pristine">This email has not been invited to Perk City</p>
+                 <p ng-show="signUp.email.$error.minlength">Email must have at least 6 characters</p>
+                
+                  <p ng-show="signUp.password.$error.required">Please set your password</p>
+                 <p ng-show="signUp.password.$error.minlength">Password must have at least 6 characters</p>
+                   </div>
+             
+            <div class="signup1">
+            <button class="button button-energized button-block" ng-click="register(email, password)" ng-controller="signUpCtrl" >Register</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

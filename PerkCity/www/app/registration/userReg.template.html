@@ -1,0 +1,65 @@
+<ion-view view-title="User Registration">
+  <ion-content id="RegistrationContent" class="padding bg customer-reg">
+
+    <div class="loginRegHeader">
+      <!-- <h1>Waitr.</h1> -->
+      <img id="resgisterLogo"src="./img/logo.svg" alt="" />
+      <br><br>
+        <h4>User Registration</h4>
+    </div>
+
+    <form ng-submit="regCtrl.register(regCtrl.emp)">
+      <div class="list list-inset loginReg" style="width: 48%; float: left;">
+        <label class="item item-input">
+          <i class="icon ion-person placeholder-icon"></i>
+          <input type="text" placeholder="First name" ng-model="regCtrl.emp.firstName"  autofocus="true">
+          <i class="ion-close" on-touch="regCtrl.emp.firstName = ''" ng-show="regCtrl.emp.firstName !== ''"></i>
+        </label>
+      </div>
+
+      <div class="list list-inset loginReg" style="width: 48%; float: right;">
+        <label class="item item-input">
+          <!-- <i class="icon ion-locked placeholder-icon"></i> -->
+          <input type="text" placeholder="Last name" ng-model="regCtrl.emp.lastName">
+          <i class="ion-close" on-touch="regCtrl.emp.lastName = ''" ng-show="regCtrl.emp.lastName !== ''"></i>
+        </label>
+      </div>
+
+      <div class="list list-inset loginReg" style="clear: both;">
+        <label class="item item-input">
+          <i class="icon ion-ios-email placeholder-icon"></i>
+          <input type="email" placeholder="Email" autocapitalize="none" ng-model="regCtrl.emp.email">
+          <i class="ion-close" on-touch="regCtrl.emp.email = ''" ng-show="regCtrl.emp.email !== ''"></i>
+        </label>
+      </div>
+
+      <div class="list list-inset loginReg">
+        <label class="item item-input">
+          <i class="icon ion-locked placeholder-icon"></i>
+          <input type="password" placeholder="Password" autocapitalize="none" ng-model="regCtrl.emp.password">
+          <i class="ion-close" on-touch="regCtrl.emp.password = ''" ng-show="regCtrl.emp.password !== ''"></i>
+        </label>
+      </div>
+
+      <div class="list list-inset loginReg">
+        <label class="item item-input">
+          <i class="icon ion-ios-telephone placeholder-icon"></i>
+          <input type="tel" placeholder="Phone" ng-model="regCtrl.emp.phone">
+          <i class="ion-close" on-touch="regCtrl.emp.phone = ''" ng-show="regCtrl.emp.phone !== ''"></i>
+        </label>
+      </div>
+
+      <button type="submit" class="button button-block button-energized" style="font-size: 20px; font-weight: 700;">
+        SIGN UP
+      </button>
+    </form>
+
+    <div class="bar bar-clear" style="height: 60px;">
+      <div class="loginRegFooter">
+        <a ui-sref="login">Already have an account? Sign In.</a><br>
+        <a ui-sref="restaurant-sign-up">Register an employee.</a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
